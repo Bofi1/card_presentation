@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>  <!-- tailwind -->
+</head>
+<body style="background-color: #e2eaed;">
+
+    <main class="mt-40">
+        <!-- CARD -->
+        <section id="card_container" class="relative w-full max-w-sm mx-auto h-52">
+
+
+            <!-- FRONT CARD -->
+            <div id="card_front" class="flex flex-col item-start p-5 justify-center text-white h-52 rounded-xl w-full
+            max-w-sm bg-white shadow-md mx-auto bg-[url('./img/front-img.jpeg')]">
+
+                <div class="flex justify-between h-9 item-center">
+                    <img class="w-10 h-full " src="./img/ship.jpg">
+                    <img class="w-20 h-full object-contain" src="./img/visa.png">
+                </div> <!-- este div es para poner imagen de ship y visa -->
+
+                <div class="flex flex-col mt-4 mb-4">
+                    <span class="text-xs">Numero de Tarjeta</span>
+                    <span id="card_num_text" class="text-white">#### #### #### ####</span>
+                </div>
+
+
+                <div class="w-full flex justify-between">
+                    <div>
+                        <span class="text-xs">Nombre Tarjeta</span>
+                        <p class="italic break-all">Nombre del Titular</p> <!-- si no cage texto lo manda para abajo -->
+                    </div>
+
+                    <div>
+                        <div class="w-20">
+                            <label for="" class="text-xs">Valido hasta</label>
+                            <p><span id="mounth_text">00</span> / <span id="year_text">00</span> </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- BACK CARD -->
+            <div id="card_back" class="absolute top-0 flex flex-col  item-start p-5 justify-center text-white h-52 rounded-xl w-full max-w-sm
+            bg-white bg-[url('./img/front-img.jpeg')]">
+            <div class="w-full h-8 bg-slate-400 absolute top-10 left-0"></div>
+            <div class="flex w-full justify-between mt-20">
+                <div id="signature_text" class="w-1/2 h-8 bg-slate-200 text-black text-sm flex item-center pl-2"> 
+
+                </div>
+                <div class="w-1/4 h-8 bg-white flex item-center">
+                    <span id="cvv_text" class="ml-3 text-center text-black"></span>
+
+                </div>
+            </div>
+            <div id="cvv_text" class="text-left text-xs mt-10">
+                Lorem ipsum dolor 000 01 800 2332 1278sit amet consectetur adipisicing elit.
+            </div>
+            </div>
+        
+        </section>
+
+        <!-- FORM -->
+    </main>
+    
+    <script src="./main.js"></script>
+
+</body>
+</html>
