@@ -66,6 +66,52 @@
         </section>
 
         <!-- FORM -->
+         <div class="w-full max-w-xs mx-auto mt-10">
+            <form class="bg-white shadows-md rounded px-8 pt-6 pb-8 mb-4">
+
+                <!-- Numero de tarjeta -->
+                <div class="mb-4">
+                    <label for="card_number" class="blocck text-gray-700 text-sm font-bold mb-2">
+                        Numero de tarjeta
+                    </label>
+                    <input type="number" id="card_number" placeholder="#### #### #### ####" class="shadow appearance-none border rounded w-full py-2 px-3 text leading-tight focus:outline-none focus:shadow-outline" >
+                </div>
+
+                <!-- Nombre de tarjeta -->
+                <div class="mb-6">
+                    <label for="card_name" class="blocck text-gray-700 text-sm font-bold mb-2">
+                        Nombre de tarjeta
+                    </label>
+                    <input type="text" id="card_name" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text leading-tight focus:outline-none focus:shadow-outline" >
+                </div>
+
+
+                <div class="mb-6 flex item-center justify-between ">
+                    <select id="mounth" class="p-2 outline outline-slate-200 outline-1 border-white border-r-8">
+                        <option value="">Mes</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                    </select>
+
+                    <select id="year" class="p-2 outline outline-slate-200 outline-1 border-white border-r-8">
+                        <option value="">Año</option>
+                        <option value="23">2023</option>
+                        <option value="24">2024</option>
+                        <option value="25">2025</option>
+                    </select>
+
+                    <div>
+                        <input id="cvv" type="text" placeholder="CVV" class="block shadow w-20 border rounded p-2">
+                    </div>
+
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded" type="">Enviar</button>
+                </div>
+            </form>
+         </div>
+         
     </main>
     
     <script src="./main.js"></script>
