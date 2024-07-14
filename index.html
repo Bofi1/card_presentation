@@ -9,8 +9,8 @@
 <body style="background-color: #e2eaed;">
 
     <main class="mt-40">
-        <!-- CARD -->
-        <section id="card_container" class="relative w-full max-w-sm mx-auto h-52">
+        <!-- CARD --> <!-- style="transform-style: preserve-3d;" -->
+        <section id="card_container" class="relative w-full max-w-sm mx-auto h-52" style="transform-style: preserve-3d;">
 
 
             <!-- FRONT CARD -->
@@ -45,8 +45,8 @@
             </div>
 
 
-            <!-- BACK CARD -->
-            <div id="card_back" class="absolute top-0 flex flex-col  item-start p-5 justify-center text-white h-52 rounded-xl w-full max-w-sm
+            <!-- BACK CARD -->  <!-- style="transform: rotateY(180deg); backface-visibility: hidden;" PARA QUE SE VEA LO DE ATRAS DE LA TARJETA -->
+            <div id="card_back" style="transform: rotateY(180deg); backface-visibility: hidden;" class="absolute top-0 flex flex-col  item-start p-5 justify-center text-white h-52 rounded-xl w-full max-w-sm
             bg-white bg-[url('./img/front-img.jpeg')]">
             <div class="w-full h-8 bg-slate-400 absolute top-10 left-0"></div>
             <div class="flex w-full justify-between mt-20">
