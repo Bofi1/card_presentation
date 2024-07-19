@@ -10,8 +10,8 @@
     let card_name_text  = document.getElementById('card_name_text')
 
 
-    let mounth_expiration  = document.getElementById('mounth')
-    let mounth_expiration_text  = document.getElementById('mounth_text')
+    let month_expiration  = document.getElementById('month')
+    let month_expiration_text  = document.getElementById('month_text')
     let year_expiration  = document.getElementById('year')
     let year_expiration_text  = document.getElementById('year_text')
     
@@ -42,20 +42,19 @@
             rotateContentCard(0)
         }
 
-        function rotateContentCard(deg) {
+    })
+
+            // funcion para rotar tarjeta
+            function rotateContentCard(deg) {
             card_container.style.transition = '.3s'
             card_container.style.transform = `rotateY(${deg}deg)` // templates literals (para usar $ para concatenar)
         }
-
-    })
-    
-
     // ------------------------------------------------------------------------------------------------------------------------
 
 
 
-    // ----------------------------------------------- CAMBIAR NUMEROS AL MISMO TIEMPO ----------------------------------------
 
+    // ----------------------------------------------- CAMBIAR NUMEROS AL MISMO TIEMPO ----------------------------------------
 
     card_number_form.addEventListener('input', onChangeCard)
 
@@ -80,7 +79,39 @@
     function limitLenght(value, minLength, maxLength) {
         return value.slice(minLength, maxLength) // ---> va a devolver el valor desde 0 a 16 digitos
     }
+    // ------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+    // ---------------------------------Año y mes cambiar----------------------------------------------------------------------
+    
+    month_expiration.addEventListener('change', onChangeMonth)
+    year_expiration.addEventListener('change', onChangeYear)
+
+    // Functions
+    function onChangeMonth(event) {
+        month_expiration_text.innerHTML = event.target.value //target agarra el elemento al que clickeaste y buscar el resultado siguiente de .traget. (event.target.value significa q como seleccionaste el select del mes va a buscar el value)
+    }
+
+    function onChangeYear(event) {
+        year_expiration_text.innerHTML = event.target.value
+    }
+    // ------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+    // --------------------------------- cambios para girar cuando se seleccionen inputs o se salga--------------------------------------
+
+    // funcion anonima para llamar a la funcion rotateContentCard() anteriormete creada
+    card_name_form.addEventListener('focus', () => rotateContentCard(0)) // se seleccione el input
+    card_number_form.addEventListener('focus', () => rotateContentCard(0)) // se seleccione el input 
+    month_expiration.addEventListener('focus', () => rotateContentCard(0)) // se seleccione el input 
+    year_expiration.addEventListener('focus', () => rotateContentCard(0)) // se seleccione el input 
+    cvv.addEventListener('blur', () => rotateContentCard(0)) // se salga del input cvv 
+    cvv.addEventListener('focus', () => rotateContentCard(180)) // se seleccione el input cvv
+    
     // ------------------------------------------------------------------------------------------------------------------------
 
 
