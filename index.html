@@ -24,14 +24,14 @@
 
                 <div class="flex flex-col mt-4 mb-4">
                     <span class="text-xs">Numero de Tarjeta</span>
-                    <span id="card_number_text" class="text-white">#### #### #### ####</span>
+                    <span id="card_number_text" class="text-white ">#### #### #### ####</span>
                 </div>
 
 
                 <div class="w-full flex justify-between">
                     <div>
                         <span class="text-xs">Nombre Tarjeta</span>
-                        <p class="italic break-all">Nombre del Titular</p> <!-- si no cage texto lo manda para abajo -->
+                        <p id="card_name_text" class="italic break-all">Nombre del Titular</p> <!-- si no cage texto lo manda para abajo -->
                     </div>
 
                     <div>
@@ -74,7 +74,7 @@
                     <label for="card_number_form" class="blocck text-gray-700 text-sm font-bold mb-2">
                         Numero de tarjeta
                     </label>
-                    <input type="number" id="card_number_form" placeholder="#### #### #### ####" class="shadow appearance-none border rounded w-full py-2 px-3 text leading-tight focus:outline-none focus:shadow-outline" >
+                    <input type="number" id="card_number_form" placeholder="#### #### #### ####" class="shadow appearance-none border rounded w-full py-2 px-3 text leading-tight focus:outline-none focus:shadow-outline             [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" >
                 </div>
 
                 <!-- Nombre de tarjeta -->
@@ -105,7 +105,7 @@
 
                     <!-- CVV -->
                     <div>
-                        <input id="cvv" type="text" placeholder="CVV" class="block shadow w-20 border rounded p-2">
+                        <input id="cvv" type="number" placeholder="CVV" class="block shadow w-20 border rounded p-2 appearance-none  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                     </div>
 
                 </div>

@@ -62,7 +62,7 @@
         card_number_text.innerHTML = formatCardNumber(card_number_form.value) //---> card_number_form.value ES EL VALOR QUE SE VA A TOMAR PARA HACER LA FUNCION
 
         if (card_number_form.value.length> 1) { // si hay algo
-            card_number_form.value = limitLenght(card_number_form.value, 0, 16)
+            card_number_form.value = limitLenght(card_number_form.value, 0, 16) // para q tenga un maxLength de 16
         }
 
 
@@ -97,6 +97,7 @@
     function onChangeYear(event) {
         year_expiration_text.innerHTML = event.target.value
     }
+    
     // ------------------------------------------------------------------------------------------------------------------------
 
 
@@ -114,5 +115,53 @@
     
     // ------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+    // ------------------------------------ (cvv) CAMBIAR NUMEROS AL MISMO TIEMPO  ---------------------------------------------------------------------------------
+
+    cvv.addEventListener('input', onChangeCardCvv)
+
+    function onChangeCardCvv() {
+        cvv_text.innerHTML = formatCardNumberCvv(cvv.value) 
+
+        if (cvv.value.length> 1) {
+            cvv.value = limitLenghtCvv(cvv.value, 0, 3) // para q tenga un maxLength de 3
+        }
+
+    }
+
+    function formatCardNumberCvv(number){ 
+        return number.replace(/\D/g, '').slice(0, 3).replace(/(.{4})/g, '$1 '); 
+    }
+
+    function limitLenghtCvv(value, minLength, maxLength) {
+        return value.slice(minLength, maxLength) 
+    }
+
+    
+
+    // ------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+    // ------------------------------------ (nombre) CAMBIAR TEXTO AL MISMO TIEMPO  ---------------------------------------------------------------------------------
+
+    card_name_form.addEventListener('input', onChangeName)
+
+    function onChangeName() {
+        card_name_text.innerHTML = formatCardNumberName(card_name_form.value) //---> card_number_form.value ES EL VALOR QUE SE VA A TOMAR PARA HACER LA FUNCIO
+    }
+
+    function formatCardNumberName(number){ // -----> ESTA ES LA FUNCION QUE SE VA A USAR PARA REEMPLAZAR
+        card_name_form.maxLength = 20
+        return number.replace(/(.{0})/g, '$1'); // ---> 0, 16 son los valores que ira cambiando mas de 16 ya no cambiara y el '{4}' es cada cuantos caracteres hay espacio
+    }
+
+    // ------------------------------------------------------------------------------------------------------------------------
+   
 
 })()
