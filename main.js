@@ -70,10 +70,11 @@
             card_number_text.innerHTML = '#### #### #### ####'
         }
 
+
     }
 
     function formatCardNumber(number){ // -----> ESTA ES LA FUNCION QUE SE VA A USAR PARA REEMPLAZAR
-        return number.replace(/\D/g, '').slice(0, 16).replace(/(.{4})/g, '$1 '); // ---> 0, 16 son los valores que ira cambiando mas de 16 ya no cambiara y el '{4}' es cada cuantos caracteres hay espacio
+        return number.replace(/\D/g, '').slice(0, 16).replace(/(.{4})/g, '$1'); // ---> 0, 16 son los valores que ira cambiando mas de 16 ya no cambiara y el '{4}' es cada cuantos caracteres hay espacio
     }
 
     function limitLenght(value, minLength, maxLength) {
@@ -163,5 +164,74 @@
 
     // ------------------------------------------------------------------------------------------------------------------------
    
+
+
+    card_number_form.addEventListener('input', cardType)
+
+    function cardType() {
+
+        console.log(valor); // para que se actuliza en tiempo real tienes que hacer un event listener ('input') y ahi aplicar esto
+
+
+        if (card_number_form.value == '') {
+            card_front.style.transition = 'all 300ms'
+            card_front.style.backgroundColor = 'white'
+            
+            card_back.style.transition = 'all 300ms'
+            card_back.style.backgroundColor = 'white'
+            
+        }
+
+        if (card_number_form.value == 4) {
+            card_front.style.transition = 'all 300ms'
+            card_front.style.backgroundColor = 'blue'
+
+            card_back.style.transition = 'all 300ms'
+            card_back.style.backgroundColor = 'blue'
+
+            card_number_text.style.color = 'white'
+            card_name_text.style.color = 'white'
+            cvv_text.style.color = 'white'
+            year_text = 'white'
+            month_text = 'white'
+
+            
+        }
+
+        if (card_number_form.value == 5) {
+            card_front.style.transition = 'all 300ms'
+            card_front.style.backgroundColor = 'red'
+
+            card_back.style.transition = 'all 300ms'
+            card_back.style.backgroundColor = 'red'
+
+            card_number_text.style.color = 'white'
+            card_name_text.style.color = 'white'
+            cvv_text.style.color = 'white'
+            year_text = 'white'
+            month_text = 'white'
+        }
+
+        if (card_number_form.value == 3) {
+            card_front.style.transition = 'all 300ms'
+            card_front.style.backgroundColor = 'grey'
+
+            card_back.style.transition = 'all 300ms'
+            card_back.style.backgroundColor = 'grey'
+
+            card_number_text.style.color = 'white'
+            card_name_text.style.color = 'white'
+            cvv_text.style.color = 'white'
+            year_text = 'white'
+            month_text = 'white'
+        }
+
+    }
+
+
+
+
+
+
 
 })()

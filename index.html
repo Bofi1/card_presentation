@@ -15,7 +15,7 @@
 
             <!-- FRONT CARD -->
             <div id="card_front" class="flex flex-col item-start p-5 justify-center text-white h-52 rounded-xl w-full
-            max-w-sm bg-white shadow-md mx-auto bg-[url('./img/front-img.jpeg')]">
+            max-w-sm bg-white shadow-md mx-auto bg-white"> <!-- bg-[url('./img/front-img.jpeg')] -->
 
                 <div class="flex justify-between h-9 item-center">
                     <img class="w-10 h-full " src="./img/ship.jpg">
@@ -27,7 +27,7 @@
                     <span id="card_number_text" class="text-white ">#### #### #### ####</span>
                 </div>
 
-
+            
                 <div class="w-full flex justify-between">
                     <div>
                         <span class="text-xs">Nombre Tarjeta</span>
@@ -47,7 +47,7 @@
 
             <!-- BACK CARD -->  <!-- style="transform: rotateY(180deg); backface-visibility: hidden;" PARA QUE SE VEA LO DE ATRAS DE LA TARJETA --> <!-- IMPORTANTE-->
             <div id="card_back" style="transform: rotateY(180deg); backface-visibility: hidden;" class="absolute top-0 flex flex-col  item-start p-5 justify-center text-white h-52 rounded-xl w-full max-w-sm
-            bg-white bg-[url('./img/front-img.jpeg')]">
+            bg-white bg-white">
             <div class="w-full h-8 bg-slate-400 absolute top-10 left-0"></div>
             <div class="flex w-full justify-between mt-20">
                 <div id="signature_text" class="w-1/2 h-8 bg-slate-200 text-black text-sm flex item-center pl-2"> 
@@ -79,7 +79,7 @@
 
                 <!-- Nombre de tarjeta -->
                 <div class="mb-6">
-                    <label for="card_name" class="blocck text-gray-700 text-sm font-bold mb-2">
+                    <label for="card_name" class="block text-gray-700 text-sm font-bold mb-2">
                         Nombre de tarjeta
                     </label>
                     <input type="text" id="card_name" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text leading-tight focus:outline-none focus:shadow-outline" >
